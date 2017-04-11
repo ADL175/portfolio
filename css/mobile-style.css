@@ -7,12 +7,12 @@
 }
 
 section {
-      /*border: 1px solid red;*/
+  /*border: 1px solid red;*/
 }
 
 div {
-      /*border: 1px solid blue;*/
-      border-top: 5px solid grey;
+  /*border: 1px solid blue;*/
+  border-top: 5px solid grey;
 }
 
 
@@ -43,6 +43,10 @@ nav > ul {
 nav > ul > li {
   display: none;
 
+}
+
+.hamburger-menu img {
+  width: 24px;
 }
 
 /********************************************************/
