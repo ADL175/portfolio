@@ -1,0 +1,125 @@
+/********************************************************/
+/***UNIVERSAL*/
+/********************************************************/
+.header-title h1 {
+  text-align: center;
+  border: 1px solid black;
+}
+
+section {
+      border: 1px solid red;
+}
+
+div {
+      border: 1px solid blue;
+}
+
+
+/********************************************************/
+/***HEADER TITLE*/
+/********************************************************/
+
+.header-div {
+  display: none;
+}
+
+/********************************************************/
+/***NAV*/
+/********************************************************/
+
+nav {
+
+    border: 1px solid green;
+
+}
+
+nav > ul {
+     text-align: center;
+     display: none;
+}
+
+nav > ul > li {
+  display: none;
+
+}
+
+/********************************************************/
+/***TOP SECTION*/
+/********************************************************/
+
+.top-section {
+  height: 200px;
+  overflow: hidden;
+}
+
+.container {
+}
+
+.container > div > h2 {
+  text-align: center;
+}
+
+.container > div {
+  height: 300px;
+  margin: 20px;
+  text-align: justify;
+}
+
+.flow-left {
+
+}
+
+.flow-center {
+
+}
+
+.flow-right {
+
+}
+/********************************************************/
+/***ABOUT SKILLS LIST*/
+/********************************************************/
+
+.skills-header {
+  display: block;
+  border: solid red;
+}
+
+.first-about > ul {
+}
+
+.first-about > ul > li {
+  list-style-type: none;
+}
+/********************************************************/
+/***ABOUT DIVS*/
+/********************************************************/
+
+.about-section > div > h2 {
+  text-align: center;
+}
+
+.about-section > div > p {
+  text-align: justify;
+  margin: 20px
+}
+
+/********************************************************/
+/***FOOTER*/
+/********************************************************/
+
+footer {
+  border: 1px solid green;
+  bottom: 0px;
+  text-align: left;
+  width: 100%;
+}
+
+.footer-stuff {
+}
+
+.footer-img{
+  left: 1%;
+  bottom: 0px;
+  float: right;
+}
