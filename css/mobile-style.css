@@ -3,16 +3,18 @@
 /********************************************************/
 .header-title h1 {
   text-align: center;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 section {
-      border: 1px solid red;
+      /*border: 1px solid red;*/
 }
 
 div {
-      border: 1px solid blue;
+      /*border: 1px solid blue;*/
+      border-top: 5px solid grey;
 }
+
 
 
 /********************************************************/
@@ -29,7 +31,7 @@ div {
 
 nav {
 
-    border: 1px solid green;
+    /*border: 1px solid green;*/
 
 }
 
@@ -82,7 +84,7 @@ nav > ul > li {
 
 .skills-header {
   display: block;
-  border: solid red;
+  /*border: solid red;*/
 }
 
 .first-about > ul {
@@ -109,7 +111,7 @@ nav > ul > li {
 /********************************************************/
 
 footer {
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   bottom: 0px;
   text-align: left;
   width: 100%;
