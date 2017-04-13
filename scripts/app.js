@@ -6,7 +6,7 @@ var rawData = [
     author: 'David Lim',
     publishedOn:   '2015-11-05',
     authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200>"'
+    body:   '<img src="http://www.placehold.it/200">',
     category: 'Code Fellows 201 Project'
 
   },
@@ -15,7 +15,7 @@ var rawData = [
     author: 'David Lim',
     date:   '2017-11-05',
     authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200>"'
+    body:   '<img src="http://www.placehold.it/200">',
     category: 'Code Fellows 201 Project'
 
 
@@ -25,7 +25,7 @@ var rawData = [
     author: 'David Lim',
     date:   '2016-11-05',
     authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200>"'
+    body:   '<img src="http://www.placehold.it/200">',
     category: 'Code Fellows 201 Project'
 
 
@@ -36,9 +36,9 @@ var rawData = [
 
 // TEMPLATE EXAMPLE:
 
-var articles = [];
+var projects = [];
 
-function Article (rawDataObj) {
+function Project (rawDataObj) {
 
   this.title = rawDataObj.title;
   this.author = rawDataObj.author;
@@ -48,31 +48,29 @@ function Article (rawDataObj) {
   this.body = rawDataObj.body;
 }
 
-Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.removeClass('template');
-  if (!this.publishedOn) $newArticle.addClass('draft');
-  $newArticle.data('category', this.category);
-  $newArticle.attr('data-author', this.author);
-  $newArticle.find('.byline a').text(this.author);
-  $newArticle.find('.byline a').attr('href', this.authorUrl);
-  $newArticle.find('h2:first').text(this.title);
-  $newArticle.find('.article-body').html(this.body);
-  $newArticle.find('time[pubdate]').attr('datetime', this.publishedOn);
+Project.prototype.toHtml = function() {
+  var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  if (!this.publishedOn) $newProject.addClass('draft');
+  $newProject.data('category', this.category);
+  $newProject.attr('data-author', this.author);
+  $newProject.find('.byline a').text(this.author);
+  $newProject.find('.byline a').attr('href', this.authorUrl);
+  $newProject.find('h2:first').text(this.title);
+  $newProject.find('.project-body').html(this.body);
+  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn);
 
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  $newArticle.append('<hr>');
-  return $newArticle;
+  return $newProject;
 };
 
 rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-rawData.forEach(function(articleObject) {
-  articles.push(new Article(articleObject));
+rawData.forEach(function(projectObject) {
+  projects.push(new Project(projectObject));
 });
 
-articles.forEach(function(article) {
-  $('#articles').append(article.toHtml());
+projects.forEach(function(project) {
+  $('#projects').append(project.toHtml());
 });
