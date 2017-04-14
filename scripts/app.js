@@ -18,7 +18,6 @@ var rawData = [
     body:   '<img src="http://www.placehold.it/200">',
     category: 'Code Fellows 201 Project'
 
-
   },
   {
     title:  'Portfolio',
@@ -28,11 +27,9 @@ var rawData = [
     body:   '<img src="http://www.placehold.it/200">',
     category: 'Code Fellows 201 Project'
 
-
   },
 
 ];
-
 
 // TEMPLATE EXAMPLE:
 
@@ -73,4 +70,20 @@ rawData.forEach(function(projectObject) {
 
 projects.forEach(function(project) {
   $('#projects').append(project.toHtml());
+});
+// ******************************************************
+// EVENT HANDLER STUFF
+// ******************************************************
+
+var articleView = {};
+
+articleView.handleMainNav = function() {
+
+  $('#home-nav').on('click', function(){
+    console.log('you clicked on home nav, not sure what to do with this yet');
+  });
+};
+
+$(document).ready(function() {
+  articleView.handleMainNav();
 });
