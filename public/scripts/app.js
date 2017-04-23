@@ -28,6 +28,24 @@ var rawData = [
     category: 'Code Fellows 201 Project'
 
   },
+  {
+    title:  'Example 1',
+    author: 'David Lim',
+    date:   '2017-11-05',
+    authorUrl:  'http://www.google.com',
+    body:   '<img src="http://www.placehold.it/200">',
+    category: 'Code Fellows 201 Project'
+
+  },
+  {
+    title:  'Example 2',
+    author: 'David Lim',
+    date:   '2016-11-05',
+    authorUrl:  'http://www.google.com',
+    body:   '<img src="http://www.placehold.it/200">',
+    category: 'Code Fellows 201 Project'
+
+  },
 
 ];
 
@@ -86,4 +104,14 @@ articleView.handleMainNav = function() {
 
 $(document).ready(function() {
   articleView.handleMainNav();
+});
+// ******************************************************
+// JQUERY AJAX
+// ******************************************************
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").load("demotest.html");
+        console.log('potato');
+    });
 });
