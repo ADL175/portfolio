@@ -1,60 +1,9 @@
 'use strict';
-
-var rawData = [
-  {
-    title:  'Salmon Cookies',
-    author: 'David Lim',
-    publishedOn:   '2015-11-05',
-    authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200">',
-    category: 'Code Fellows 201 Project'
-
-  },
-  {
-    title:  'Bus Mall',
-    author: 'David Lim',
-    date:   '2017-11-05',
-    authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200">',
-    category: 'Code Fellows 201 Project'
-
-  },
-  {
-    title:  'Portfolio',
-    author: 'David Lim',
-    date:   '2016-11-05',
-    authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200">',
-    category: 'Code Fellows 201 Project'
-
-  },
-  {
-    title:  'Example 1',
-    author: 'David Lim',
-    date:   '2017-11-05',
-    authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200">',
-    category: 'Code Fellows 201 Project'
-
-  },
-  {
-    title:  'Example 2',
-    author: 'David Lim',
-    date:   '2016-11-05',
-    authorUrl:  'http://www.google.com',
-    body:   '<img src="http://www.placehold.it/200">',
-    category: 'Code Fellows 201 Project'
-
-  },
-
-];
-
-// TEMPLATE EXAMPLE:
-
-var projects = [];
+// ******************************************
+// ******   Object constructor
+// ******************************************
 
 function Project (rawDataObj) {
-
   this.title = rawDataObj.title;
   this.author = rawDataObj.author;
   this.publishedOn = rawDataObj.publishedOn;
@@ -63,55 +12,51 @@ function Project (rawDataObj) {
   this.body = rawDataObj.body;
 }
 
+Project.all = [];
+
+// ******************************************
+// ******   Handlebars
+// ******************************************
+
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  if (!this.publishedOn) $newProject.addClass('draft');
-  $newProject.data('category', this.category);
-  $newProject.attr('data-author', this.author);
-  $newProject.find('.byline a').text(this.author);
-  $newProject.find('.byline a').attr('href', this.authorUrl);
-  $newProject.find('h2:first').text(this.title);
-  $newProject.find('.project-body').html(this.body);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn);
+  console.log('project html prooto');
+  let template = Handlebars.compile($('#project-template').text());
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
-  return $newProject;
+  return template(this);
 };
 
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+// ******************************************
+// ******   Load and push projects into array
+// ******************************************
 
-rawData.forEach(function(projectObject) {
-  projects.push(new Project(projectObject));
-});
-
-projects.forEach(function(project) {
-  $('#projects').append(project.toHtml());
-});
-// ******************************************************
-// EVENT HANDLER STUFF
-// ******************************************************
-
-var articleView = {};
-
-articleView.handleMainNav = function() {
-
-  $('#home-nav').on('click', function(){
-    console.log('you clicked on home nav, not sure what to do with this yet');
+Project.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.date)) - (new Date(a.date));
   });
-};
 
-$(document).ready(function() {
-  articleView.handleMainNav();
-});
-// ******************************************************
-// JQUERY AJAX
-// ******************************************************
+  rawData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  })
+}
 
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#div1").load("demotest.html");
-        console.log('potato');
-    });
-});
+// ******************************************
+// ******   Method to run all functions
+// ******************************************
+
+Project.fetchAll = function() {
+  if (localStorage.rawData) {
+    Project.loadAll(JSON.parse(localStorage.rawData));
+    console.log(Project.all);
+    projectView.initIndexPage();
+
+  } else {
+
+  $.getJSON('list.json').then(function(rawData){
+    Project.loadAll(rawData);
+    projectView.initIndexPage();
+    localStorage.rawData = JSON.stringify(rawData);
+  });
+}
+}
