@@ -2,9 +2,22 @@
 /***UNIVERSAL*/
 /********************************************************/
 
-h1 {
-  text-align: center;
-  /*border: 1px solid black;*/
+.header-title h1 {
+  /*text-align: center;
+  display: inline-block;*/
+  position: relative;
+top: -111px;
+right: -126px;
+
+}
+
+h2 {
+  margin: 1em 1em;
+  padding-bottom: 1em;
+}
+
+span {
+  margin: 1em 1em;
 }
 
 section {
@@ -20,7 +33,8 @@ main {
   margin: auto;
   /*border-right: 2px solid grey;
   border-right: 2px solid grey;*/
-  background: white;
+  background: cornsilk;
+  opacity:.9;
 
 }
 
@@ -29,24 +43,43 @@ p {
 }
 
 body {
-  background: grey;
+  /*background: pink;*/
+  /*width: 100%;*/
+  background-image: url("http://www.sauerworld.org/wp-content/uploads/2014/11/grey3.jpg");
+  /*background-size: 100%;*/
+
+  /*background-repeat: no-repeat;*/
+  /*background-attachment: fixed;*/
+
+
+  /*top right no-repeat; background-attachment:fixed;*/
 }
+
 
 /********************************************************/
 /***HEADER TITLE*/
 /********************************************************/
 
+#headshot {
+  display: inline;
+  border-radius: 100%;
+  margin: 1em;
+  width: 100px;
+}
+
 .header-title {
   float: left;
   display: inline-block;
   position: relative;
+      margin-bottom: -100px;
 }
 .header-div {
   float: right;
   display: inline-block;
   text-align: right;
+  margin-top: 10px;
   /*border: 1px solid green;*/
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 
 }
 
@@ -76,6 +109,7 @@ nav > ul > li {
   display: inline;
   list-style-type: none;
   padding: 20px;
+
 }
 
 
@@ -108,6 +142,7 @@ nav > ul > li {
   width: 30%;
   height: 300px;
   border-right: 2px solid grey;
+  /*margin-right: 2px solid;*/
 }
 
 .flow-center {
@@ -127,14 +162,19 @@ nav > ul > li {
 /***ABOUT SKILLS LIST*/
 /********************************************************/
 
+
 .first-about {
   clear: both;
   display: block;
   border-top: 5px solid grey;
+  border-bottom: 5px solid grey;
+
 }
 
 .skills-header {
-  display: inline;
+  margin: 1em 1em;
+  /*display: inline-block;*/
+  text-align: center;
   /*border: solid red;*/
 }
 
@@ -149,12 +189,23 @@ nav > ul > li {
 /********************************************************/
 
 .about-section div {
-  border-bottom: 5px solid grey;
+  /*border-bottom: 5px solid grey;*/
 
 }
 
 .second-about h2 {
   text-align: center;
+}
+
+#project-div h2 {
+  border-top: 5px solid pink;
+  text-align: center;
+  margin: 1em 1em;
+  padding-top: 1em;
+}
+
+#project-div  {
+text-align: center;
 }
 
 .third-about h2 {
@@ -170,20 +221,25 @@ nav > ul > li {
 /********************************************************/
 
 footer {
-  /*border: 1px solid green;*/
+  border: 5px solid green;
   bottom: 0px;
   text-align: left;
-  width: 100%;
-  height: 40px;
-  border-top: 5px solid grey;
+  /*width: 100%;
+  height: 0px;*/
+  /*border-top: 5px solid grey;*/
 }
 
 .footer-stuff {
-
+  /*border: 5px solid green;*/
+  color: grey;
+  text-align: center;
+  font-size: 10px;
 }
 
 .footer-img{
   left: 1%;
   bottom: 0px;
   float: right;
+  border: 5px solid green;
+
 }

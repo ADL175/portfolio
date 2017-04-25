@@ -1,45 +1,45 @@
 [{
 		"title": "Salmon Cookies",
 		"author": "David Lim",
-		"date": "2015-11-05",
+		"publishedOn": "2015-11-05",
 		"authorUrl": "http://www.google.com",
-		"body": "<img src='http://www.placehold.it/200'>",
+		"body": "<img src='http://www.placehold.it/350x200'>",
 		"category": "Code Fellows 201 Project"
 
 	},
 	{
 		"title": "Bus Mall",
 		"author": "David Lim",
-		"date": "2017-11-05",
+		"publishedOn": "2017-11-05",
 		"authorUrl": "http://www.google.com",
-		"body": "<img src='http://www.placehold.it/200'>",
+		"body": "<img src='http://www.placehold.it/350x200'>",
 		"category": "Code Fellows 201 Project"
 
 	},
 	{
 		"title": "Portfolio",
 		"author": "David Lim",
-		"date": "2016-11-05",
+		"publishedOn": "2016-11-05",
 		"authorUrl": "http://www.google.com",
-		"body": "<img src='http://www.placehold.it/200'>",
+		"body": "<img src='http://www.placehold.it/350x200'>",
 		"category": "Code Fellows 201 Project"
 
 	},
 	{
 		"title": "Example 1",
 		"author": "David Lim",
-		"date": "2017-11-05",
+		"publishedOn": "2017-11-05",
 		"authorUrl": "http://www.google.com",
-		"body": "<img src='http://www.placehold.it/200'>",
+		"body": "<img src='http://www.placehold.it/350x200'>",
 		"category": "Code Fellows 201 Project"
 
 	},
 	{
 		"title": "Example 2",
 		"author": "David Lim",
-		"date": "2016-11-05",
+		"publishedOn": "2016-11-05",
 		"authorUrl": "http://www.google.com",
-		"body": "<img src='http://www.placehold.it/200'>",
+		"body": "<img src='http://www.placehold.it/350x200'>",
 		"category": "Code Fellows 201 Project"
 	}
 ]
