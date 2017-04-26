@@ -19,6 +19,7 @@ projectView.initNewArticlePage = function() {
 // ******************************************
 
 projectView.initIndexPage = function() {
+  $('#projects').html('');
   Project.all.forEach(function(project) {
     $('#projects').append(project.toHtml())
   });
