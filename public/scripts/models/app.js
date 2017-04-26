@@ -45,16 +45,13 @@ Project.loadAll = function(rawData) {
 // ******************************************
 
 Project.fetchAll = function() {
-  if (localStorage.rawData) {
-    Project.loadAll(JSON.parse(localStorage.rawData));
+  if(Project.all.length <= 0) {
+    $.getJSON('list.json').then(function(rawData){
+      Project.loadAll(rawData);
+      projectView.initIndexPage();
+    });
+  }
+  else {
     projectView.initIndexPage();
-
-  } else {
-
-  $.getJSON('list.json').then(function(rawData){
-    Project.loadAll(rawData);
-    projectView.initIndexPage();
-    localStorage.rawData = JSON.stringify(rawData);
-  });
-}
+  }
 }
