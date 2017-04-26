@@ -4,8 +4,8 @@
 
 // TODO: What function do you call to activate page.js? Fire it off now, to execute
 
-page('/', projectController.getProjects);
-page('/about', aboutController.hideProjects);
+page('/', aboutController.hideProjects);
+page('/projects', projectController.getProjects);
 
 
 page();
