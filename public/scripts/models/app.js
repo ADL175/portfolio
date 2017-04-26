@@ -19,7 +19,6 @@ Project.all = [];
 // ******************************************
 
 Project.prototype.toHtml = function() {
-  console.log('project html prooto');
   let template = Handlebars.compile($('#project-template').text());
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
@@ -48,7 +47,6 @@ Project.loadAll = function(rawData) {
 Project.fetchAll = function() {
   if (localStorage.rawData) {
     Project.loadAll(JSON.parse(localStorage.rawData));
-    console.log(Project.all);
     projectView.initIndexPage();
 
   } else {
