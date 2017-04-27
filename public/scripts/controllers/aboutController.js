@@ -4,8 +4,8 @@
   const aboutController = {};
   aboutController.hideProjects = () => {
     $('#projects').hide();
+    $('#repos').hide();
     $('.about').show();
-    console.log('about controller working now!');
   };
 
 

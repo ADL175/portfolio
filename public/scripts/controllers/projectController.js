@@ -4,10 +4,9 @@
   const projectController = {};
   projectController.getProjects = () => {
    Project.fetchAll();
-
     $('#projects').show();
+    $('#repos').hide();
     $('.about').hide();
-    console.log('porject controller says hi');
   };
   module.projectController = projectController;
 })(window);
