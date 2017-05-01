@@ -5,7 +5,6 @@
 
   const ui = function() {
     let $repos = $('#repos');
-
     $repos.find('ul').empty();
     $repos.show();
   };
@@ -18,6 +17,8 @@
       repos.with('name').map(render)
     );
   };
+
   repos.requestRepos(repoView.index);
+  
   module.repoView = repoView;
 })(window);

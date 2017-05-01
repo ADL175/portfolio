@@ -10,7 +10,7 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.get(`https://api.github.com/users/adl175/repos?access_token=${token}`)
+    $.get('/repos')
     .then(
       results => {
         console.log(results);
