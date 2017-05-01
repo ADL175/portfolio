@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/ADL175/portfolio#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "pg": "^6.1.5"
   }
 }
